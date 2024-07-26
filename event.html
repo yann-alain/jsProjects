@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap-utilities.rtl.css">
+    <style>
+        .container {
+            background-color: #343a40;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 10px;
+            padding: 10px;
+        }
+        .row {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid white;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <input type="text" id="in"> -->
+
+
+    <!-- <p role="banner"><b>Quel numéro est affiche la couleur verte ?</b></p>
+    <p role="banner"><b>Quel numéro est affiche la couleur rouge ?</b></p>
+    <p role="banner"><b>Quel numéro est affiche la couleur bleue ?</b></p>
+    <p role="banner"><b>Quel numéro est affiche la couleur jaune ?</b></p> -->
+    <!-- <div role="button" class="container">
+        <div class="row">
+            <div class="col" id='un'>1</div>
+            <div class="col" onclick="numéro2()" id='deux'>2</div>
+            <div class="col" onclick="numéro3()" id='trois'>3</div>
+            <div class="col" onclick="numéro4()" id='quatre'>4</div>
+            <div class="col" onclick="numéro5()" id='cinq'>5</div>
+            <div class="col" onclick="numéro6()" id='six'>6</div>
+            <div class="col" onclick="numéro7()" id='sept'>7</div>
+            <div class="col" onclick="numéro8()" id='huit'>8</div>
+            <div class="col" onclick="numéro9()" id='neuf'>9</div>
+          </div>
+    </div> -->
+   <h1>Compte a rebours <input type="button" value="1" data-counter></h1>
+    
+    <script>
+        document.addEventListener('click', function(event) {
+
+        if (event.target.dataset.counter != undefined) { // if the attribute exists...
+         var limite = event.target.value++;
+         if (limite == 10) {
+            alert ('Stop !')
+         }
+        }
+        }); 
+        // class Bouton {
+        //     handleEvent(event) {
+        //         switch (event.type) {
+        //             case 'mousedown':
+        //                 idée.innerHTML = "bouton en pression"
+        //                 break;
+        //             case 'mouseup':
+        //                 idée.innerHTML = 'Bouton relaché'
+        //                 break;
+        //             case 'onchange':
+        //                 document.body.style.background = 'red';
+        //                 break;
+        //         }
+        //     }
+        // }
+        // let bout = new Bouton();
+
+        // idée.addEventListener ('mousedown', bout);
+        // idée.addEventListener ('mouseup', bout);
+        // idée.addEventListener ('onchange', bout);
+
+
+
+
+
+
+
+        // un.onclick =  function (event) {
+        //     // document.getElementById('un').style.background = "#d63384" //pink
+        //     event.target.style.background = '#d63384';
+        //     setTimeout(() => {
+        //         alert ("Mauvaise réponse ! ");
+        //         event.target.style.background = ''
+        //     }, 0)
+        // }
+        
+        // function numéro2 () {
+        //     document.getElementById('deux').style.background = "red" //red
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro3 () {
+        //     document.getElementById('trois').style.background = "#198754" //green
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro4 () {
+        //     document.getElementById('quatre').style.background = "#052c65" //blue
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro5 () {
+        //     document.getElementById('cinq').style.background = "#ffc107" //yellow
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro6 () {
+        //     document.getElementById('six').style.background = "#fd7e14" //orange
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro7 () {
+        //     document.getElementById('sept').style.background = "black" //black
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro8 () {
+        //     document.getElementById('huit').style.background = "#6c757d" //gray
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        // function numéro9 () {
+        //     document.getElementById('neuf').style.background = "#2c0b0e" //marrow
+        //     // alert ("Mauvaise réponse ! ")
+        // }
+        
+        
+        // const question = "prompt ('Quel chiffre contient la couleur rouge ?')"
+        // function game () {
+        //     const quiz = prompt('quel numéro affiche le bleu ?')
+        //     if (quiz == 1) {
+        //         alert ('Bonne réponse');
+        //         numéro1();
+        //     } else {
+        //         alert('Mauvaise réponse !')
+        //     }
+        // }
+        // game();
+        
+    
+        // elem.onclick = (() => {
+        //     alert ('Hello Yannick !')
+        // })
+        
+        // nul.onclick = (() => {
+        //     document.body.style.background = "black";
+        // })
+    </script>
+</body>
+</html>

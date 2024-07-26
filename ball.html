@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invalid { border-color: red; }
+        #error { color: red }
+    </style>
+    
+</head>
+<body style="height: 200px">
+    
+     
+      Nom<input type="name" id="name" value="name"> Prénom<input type="surname" id="surnmae" value="surname">
+      
+      <div id="error"></div>
+      
+      <script>
+         input.onfocus = function(){
+            if (name !== String) {
+              this.classList.add('invalid')
+            } else {
+              this.classList.remove('invalid')
+            }
+         }
+
+    //   input.onblur = function() {
+    //     if (!input.value.includes('@')) { // not email
+    //       input.classList.add('invalid');
+    //       error.innerHTML = 'Please enter a correct email.'
+    //     }
+    //   };
+      
+    //   input.onfocus = function() {
+    //     if (this.classList.contains('invalid')) {
+    //       // remove the "error" indication, because the user wants to re-enter something
+    //       this.classList.remove('invalid');
+    //       error.innerHTML = "";
+    //     }
+    //   };
+      </script>
+    
+</body>
+</html>

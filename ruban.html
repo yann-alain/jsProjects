@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .calculatrice {
+        width: 50%;
+        border-radius: 5px;
+        border: solid 1px ;
+        box-shadow: 6px 6px 6px ;
+        margin: auto;
+      }
+      .screen {
+        
+        padding: 2.2rem;
+        text-align: right;
+        width: 100%;
+        border: 1px solid bisque;
+        border-radius: 4px;
+        height: 2em;
+        font-size: 1.25em;
+        box-shadow: 3px 4px;
+        text-align: right;
+        /*to contain longer numbers within calculator display area*/
+        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .tableau {
+        background-color: rgb(228, 98, 124);
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+        padding: 0px;
+      }
+      .un {
+        width: calc((100% - 230px)/2);
+        border-radius: 6px;
+        margin: 10px;
+        padding: 1px;
+      }
+      input {
+        border-radius: 6px;
+        padding: 4px;
+        font-size: 1.25em;
+        outline: none;
+      }
+      input:hover {
+        border: 1px solid;
+        cursor: pointer;
+      }
+      .operandes {
+        width: 75%;
+      }
+      .opérateur {
+        width: 75%;
+      }
+      .operandes > input {
+        width: calc((100% - 30px)/3);
+        background-color: cornsilk;
+        margin: 2px;
+        outline-color: black;
+      }
+      .opérateur > button {
+        width: calc((100% - 80px)/3);
+        padding: 2px;
+        background-color: cornsilk;
+        font-size: 1.30em;
+        border-radius: 5px;
+        margin: 2px;
+        outline-color: black;
+      }
+    </style>
+</head>
+<body>
+ 
+  <div class="calculatrice">
+    
+    <h1>CALCULATRICE</h1>
+   
+      <div class="tableau">
+        <p class="screen">0</p>
+        <input type="button" name="AC" value="AC" class="clear un">
+        <input type="button" name="=" value="=" class="res un">
+        <div class="operandes tableau">
+          <input type="button" name="1" value="1">
+          <input type="button" name="2" value="2">
+          <input type="button" name="3" value="3">
+          <input type="button" name="4" value="4">
+          <input type="button" name="5" value="5">
+          <input type="button" name="6" value="6">
+          <input type="button" name="7" value="7">
+          <input type="button" name="8" value="8">
+          <input type="button" name="9" value="9">
+          <input type="button" name="0" value="0">
+          <input type="button" name="." value=".">
+        </div>
+        <div class="opérateur tableau">
+          <button type="button" id="division">&divide;</button>
+          <button type="button" id="multiplication">&times;</button>
+          <button type="button" id="addition">+</button>
+          <button type="button" id="soustraction">-</button>
+        </div>
+      </div>
+  
+  </div>
+    
+<script>
+      const operand = document.querySelector('.operandes');
+      const operation = document.querySelector('.opérateur');
+      const ecran = document.querySelector('.screen');
+      const resultat = document.querySelector('.res');
+      const suppression = document.querySelector('.clear');
+
+      const val_screen = '';
+      const reponse = null;
+      const prec = null;
+
+      operand.addEventListener('click', function(event) {
+        prec !== null && (prec = null);
+        val_screen = `${val_screen} ${event.target.value}`;
+        ecran.innerHTML = val_screen;
+      });
+      operation.addEventListener('click', function(event) {
+        prec !== null && (val_screen = prec);
+        val_screen = `${val_screen} ${event.target.innerHTML}`;
+        ecran.innerHTML = val_screen;
+      })
+      resultat.addEventListener('click', function(e){
+      expression = expression.replace(/÷/g, '/');
+      expression = expression.replace(/×/g, '*');
+      try {
+        reponse = eval(val_screen);  //evaluates string like javascript expression
+      }
+      catch(e){
+        console.log(e);
+        reponse = 0;
+      }
+      finally {
+        expression = '';
+        console.log(reponse);
+        reponse === null || reponse === undefined && (reponse = 0);
+        prec = reponse;
+        ecran.innerHTML = reponse;
+      }
+    });
+
+    clear.addEventListener('click', function(){
+      val_screen = '';
+      ecran.innerHTML = '0';
+    })
+       
+</script>
+
+</body>
+</html>
+
+<!-- <script>
+  function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  var keys = Object.keys(source);
+  for(var i = 0; i < collection.length; i++){
+    var match = true;
+    for(var j = 0; j < keys.length; j++){
+      if(!collection[i].hasOwnProperty(keys[j])){
+        match = false;
+      }
+       else if(collection[i][keys[j]] != source[keys[j]]){ //use [] because key is expression, can not use dot opeartor
+         match = false;
+       }
+
+    }
+    if(match){
+      arr.push(collection[i]);
+    }
+  }
+  
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{name : "YANN", job : "CEO"}, {name : "EMMA", job : "DOCTEUR"},{name : "GRACE", job : "JOURNALISTE"},{name : "OCÉ", job : "SALESPEOPLE"}], {job : "SALESPEOPLE"});
+</script> -->

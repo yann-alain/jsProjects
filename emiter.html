@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Emitter</title>
+    <style>
+       * {
+        box-sizing: border-box;
+        text-align: center;
+       }
+       h1 {
+        font-size: 40px;
+        margin-top: 10px;
+       }
+       .container {
+        display: flex;
+        justify-content: center;
+        margin: 30px;
+        padding: 15px;
+       }
+       .horloge {
+        font-size: 30px;
+        background-color: rgb(175, 137, 87);
+        color: black;
+        border: solid 5px black;
+        margin: 15px;
+        padding: 20px;
+        transition: transform 0.5s;
+       }
+       .flex {
+           transform: rotateX(360deg);
+       }
+    </style>
+</head>
+<body>
+  <h1>MA MINUTERIE</h1>
+  <div class="container">
+     <div id="left-time" class="horloge">0</div>
+     <div id="right-time" class="horloge">0</div>
+  </div>
+<script>
+
+   var seconde = document.getElementById('left-time');
+   var milliseconde = document.getElementById('right-time');
+   var lim = 59;
+   var rebours = 0;
+
+   var HORLOGE = setInterval(function () {
+    rebours++;
+    if (rebours > lim) {
+      rebours = 0
+    }
+    if (rebours % 10 == 0){
+      seconde.classList.toggle('flex');
+      seconde.innerHTML = rebours / 10;
+    }
+    milliseconde.classList.toggle('flex');
+    milliseconde.innerHTML = rebours % 10;
+   }, 1000);
+
+
+
+
+
+
+
+
+
+
+  // class EventEmitter {
+  //   constructor(){
+  //     this.events = {};
+  //     this.onceEvents = {};
+  //   }
+
+  //   on(eventName, callBack){
+  //     if(!this.events[eventName]){  //undefined is falsy, [] is truthy
+  //       this.events[eventName] = [];
+  //     }
+  //     this.events[eventName].push(callBack);
+  //   }
+
+  //   once(eventName, callBackOnce){
+  //     if(!this.onceEvents[eventName]){
+  //       this.onceEvents[eventName] = [];
+  //     }
+  //     this.onceEvents[eventName].push(callBackOnce);
+  //   }
+
+  //   emit(eventName, ...args){
+  //     if(this.events[eventName]){
+  //       this.events[eventName].forEach((cb) => cb(args));
+  //     }
+  //     if(this.onceEvents[eventName]){
+  //       this.onceEvents[eventName].forEach((cbo) => cbo(args))
+  //       delete this.onceEvents[eventName];
+  //     }
+
+  //   }
+  //   off(eventName, callBack){
+  //     if(this.events[eventName]){
+  //       let index = this.events[eventName].indexOf(callBack);
+  //       index !== -1 && this.events[eventName].splice(index, 1);
+  //     }
+  //     if(this.onceEvents[eventName]){
+  //       let index = this.onceEvents[eventName].indexOf(callBack);
+  //       index !== -1 && this.onceEvents[eventName].splice(index, 1);
+  //     }
+  //   }
+  // }
+  // var eventEmitter = new EventEmitter();
+
+  // function responseToEvent(msg) {
+  //     console.log(msg);
+  // }
+
+  // eventEmitter.on('pramp', responseToEvent);
+  // eventEmitter.once('pramp', function(msg) { console.log(msg + ' just once!'); });
+  // eventEmitter.once('pramp', () => console.log('pramp'))
+  // eventEmitter.emit('pramp', '1st');
+  // eventEmitter.emit('pramp', '2nd');
+  // eventEmitter.off('pramp', responseToEvent);
+  // eventEmitter.emit('pramp', '3rd');
+  // eventEmitter.emit('pramp', '1st');
+  </script>
+  </body>
+</html>

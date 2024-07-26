@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limo</title>
+</head>
+<body>
+    
+     <input type="text" id="input">
+     <button data-show title="show message">soumettre</button>
+     <script>
+      
+      document.getElementsByTagName('input')[0].value = 5;
+      button = document.querySelector('[data-show]').addEventListener('click', function() {
+        alert ('Enregistré avec succes !')
+      })
+     
+        // input.onpaste = function(event) {
+        //   alert("paste: " + event.clipboardData.getData('text/plain'));
+        //   event.preventDefault();
+        // };
+      
+        // input.oncut = input.oncopy = function(event) {
+        //   alert(event.type + '-' + document.getSelection());
+        //   event.preventDefault();
+        // };
+      </script>
+     <!-- <script>
+        document.getElementById('submit').addEventListener('click', function() {
+           document.body.style.backgroundColor = 'red';
+        })
+     </script> -->
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(33, 216, 33);
+    text-align: center;
+    margin: auto 0;
+}
+
+h1 {
+    font-size: 6rem;
+    color: rgb(221, 255, 152);
+}
+
+p {
+   font-size: 2rem;   
+   color: white;
+}
+
+button {
+    background-color: rgb(221, 255, 152);
+    color: rgb(33, 216, 33);
+    font-size: 22px;
+    padding: 20px;
+}
+div {
+    border-style: solid;
+    border-radius: 9999px;
+    background-color: black;
+    max-width: 2px;
+    margin: auto auto;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minuterie</title>
+</head>
+<style>
+   * {
+    box-sizing: border-box;
+    text-align: center;
+   }
+   
+   h1 {
+    font-size: 30px;
+   }
+   #container {
+    justify-content: center;
+    padding: 20px;
+    display: inline-flex;
+   }
+   #sep {
+    font-weight: 900;
+    margin: 40px;
+   }
+   .temps {
+    background-color: orangered;
+    border: solid black 3px;
+    font-size: 20px;
+    padding: 24px;
+    margin: 10px;
+    color: white;
+    transition: transform 1s;
+   }
+   .time {
+    background-color: orangered;
+    border: solid black 3px;
+    font-size: 20px;
+    padding: 24px;
+    margin: 10px;
+    color: white;
+    transition: transform 1s;
+   }
+   .change {
+    transform: rotateX(360deg);
+   }
+
+</style>
+<body>
+    
+    <h1>HORLOGE INTELLIGENTE</h1>
+    <div id="container">
+      
+            <div id="first-hour" class="time">0</div>
+            <div id="second-hour" class="time">0</div>
+            <div id="sep">:</div>
+            <div id="first-time" class="temps">0</div>
+            <div id="second-time" class="temps">0</div>
+       
+    </div>
+    
+</body>
+<script>
+   var firstTime = document.getElementById('first-time') ;
+   var secondTime = document.getElementById('second-time');
+   var firstHour = document.getElementById('first-hour');
+   var secondHour = document.getElementById('second-hour');
+   
+   var counter = 0;
+   var LIMITE = 59;
+   var INTERVAL = 1000;
+   
+   var sec = setInterval(function () {
+    counter++;
+    if (counter > LIMITE) {
+       counter = 0;
+    }
+    if (counter % 10 === 0) {
+       firstTime.classList.toggle('change');
+       firstTime.innerHTML = counter/10;
+    }
+    secondTime.classList.toggle('change');
+    secondTime.innerHTML = counter%10;
+   }, INTERVAL);
+</script>
+</html>

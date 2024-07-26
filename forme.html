@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <style>
+        body {
+            text-align: center;
+            box-sizing: border-box;
+            font-family: cursive;
+            font: optional;
+        }
+        .sign-up-form{
+            width: 35%;
+            margin: auto auto;
+            padding: 16px;
+            background-color: darkblue;
+            border-radius: 4px;
+            color: aliceblue;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 4px auto;
+            border: none;
+            border-bottom: #c1d2d3 solid 3px;
+        }
+        input[type=submit] {
+            border: none;
+        }
+        label {
+        display: block;
+        padding: 8px;
+        }
+
+        .invlid {
+        border: red solid 3px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Mes coordonnées</h1>
+    <div class="sign-up-form">
+        <form name="signup" class="signup-form" onsubmit="return validateForm()" return="false">
+            <label>Nom <br><input type="text" name="name" required></label>
+            <label>Prénom <br><input type="text" name="surname" required></label>
+            <label>Email <br><input type="email" name="email" required></label>
+            <label>Mot de passe <br><input type="password" name="password" id="password" required></label>
+            <label>Confirmer mot de passe <br><input type="password" name="cpassword" id="cpassword" required></label>
+            <br><input type="submit" name="submit" value="soumettre">
+        </form>
+    </div>
+    
+    <script>
+        function validateForm() {
+           const password = document.getElementById('password');
+           const cpassword = document.getElementById('cpassword');
+           if (document.forms['signup']['password'].value !== document.forms['signup']['cpassword'].value) {
+              password.classList.add('invlid');
+              cpassword.classList.add('invlid');
+              return false;
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHILO_GAME</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+        body {
+            background-color:mediumseagreen;
+        }
+        .entete {
+            display: flex;
+            gap: 200px;
+        }
+        .entete > img {
+            margin: 30px;
+            border-radius: 99999px;
+        }
+        .quiz {
+            font-size: 30px;
+            margin-top: -200px;
+        }
+        .quiz > p {
+            color: white;
+            font-weight: 800;
+        }
+        .quiz > .author {
+            padding: 20px;
+            margin: 30px;
+        }
+        button {
+            padding: 10px;
+            color: black;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div role="heading" class="entete">
+        <img src="images/herm-Socrates-half-original-Greek-Capitoline-Museums.webp" alt="socrates" width="200px">
+        <h1>CITATIONS PHILOSOPHIQUES</h1>
+    </div>
+    <div class="quiz">
+        <!-- <p><em>L'homme est un loup pour l'homme : </em></p>
+        <div class="author">
+            <button id="thomas" type="button" onclick="alert('Bonne réponse')" value="THOMAS HOBBES" class="thomas auteur">THOMAS HOBBES</button>
+            <button id="platon" type="button" onclick="alert('Mauvaise réponse')" value="PLATON" class="platon auteur">PLATON</button>
+        </div> -->
+        <p><em>L'homme est un animal politique : </em></p>
+        <div class="author">
+            <button id="rousseau" type="button"value="Jean Jacques Rousseau" class="thomas auteur">ROUSSEAU</button>
+            <button id="paul" type="button" value="" class="platon auteur">SARTRE</button>
+        </div>
+    </div>
+    <script>
+        
+        paul.onclick = function() {
+            document.getElementById('paul').style.background = 'green';
+            document.getElementById('paul').style.color = 'white';
+            setTimeout(() => document.getElementById('paul').style.removeProperty('background'), 1000)
+            setTimeout(() => document.getElementById('paul').style.removeProperty('color'), 1000);
+        }
+       
+        rousseau.onclick = function () {
+            document.getElementById('rousseau').style.background = 'red';
+            document.getElementById('rousseau').style.color = 'white';
+            setTimeout(() => document.getElementById('rousseau').style.removeProperty('background'),1000);
+            setTimeout(() => document.getElementById('rousseau').style.removeProperty('color'), 1000);
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ex"></p>
+
+    <!-- <button onclick="myFunc_1()">Notes croissantes</button>
+    <button onclick="myFunc_2()">Notes decroissantes</button> -->
+    <!-- <button onclick="document.getElementById('ex').innerHTML= Date()">l'heure actuelle</button> -->
+    <!-- <button onclick="this.innerHTML= Date()">l'heure actuelle</button> -->
+    
+    
+    <script>
+
+        const tab = [ "terminale", "seconde ", , "troisieme","sixieme", "quatrieme", "cinquieme"] ;
+         let res = "<ul>" ; 
+        for (let x = 0; x < tab.length; x++) { res += tab[x] + "<li>"} 
+        document.getElementById("ex").innerHTML = res
+        // const notes = new Set(["10", "34", "22", "23", "9", "2"])
+        // const fruits = new Map([["mangues", 30],["oranges", 31],["bananes", 10],["noix de coco", 6] ])
+        // const people = new Map()
+        // people.set("hoe", 200)
+        // people.set("fee", 220)
+        // people.set("efts", 300)
+        // const enfants = people.get("efts")
+        // const hommes = people.get("hoe")
+        // const femme = people.get("fee")
+        
+        // let word = `Il y'a ${enfants} enfants , ${hommes} hommes et ${femme} femmes.`
+        // document.getElementById("ex").innerHTML = word 
+        // ans = notes.has("10")
+        // let x = 0; 
+        // let text = "";
+        // for (const x of notes) {
+        //     text+= x + "<br>";
+        // }
+       
+        // while (notes[x]) {
+        //     text+= notes[x] + "<br>";
+        //     x++;
+        // }
+
+       
+        
+        // function myFunc_1() {
+        //     notes.sort()
+        //     document.getElementById("ex").innerHTML = notes;
+        // }
+        // function myFunc_2() {
+        //     notes.reverse()
+        //     document.getElementById("ex").innerHTML = notes;
+        // }
+        
+
+
+
+        // const tab = ["sara", "oli", "ismael", "eric",
+        // "samuel"]
+        // document.getElementById("ex").innerHTML = tab.sort();
+
+        // let text = "";
+        // tab.forEach(myFunc);
+    
+        // for (let x = 0 ; x < len; x++) {
+        //     text+= "<li>" + tab[x] + "<li>";
+        // }
+        // function myFunc(value) {
+        //    text += "<li>" + value + "</li>";
+        // }
+       
+        
+        
+        
+    </script>
+</body>
+</html>
+
+<!-- const myArray = [ "A string", "A second string" ];
+const [ myFirstElement, mySecondElement ] = myArray;
+
+const myObject = { firstValue: false, secondValue: true };
+const { myProp, mySecondProp } = myObject;
+
+myFirstElement;
+> "My string"
+
+mySecondElement;
+> "Second string"
+
+myProp;
+> false
+
+mySecondProp;
+> true
+
+function calcul (...myParameters) { let res = 0 ; myParameters.forEach((param) => { res+= param } ) ; return res }; calcul(10, 34, 12); -->
